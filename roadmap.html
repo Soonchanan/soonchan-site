@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인생 로드맵</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/[email protected]/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{
+    --ink:#1c1a17; --paper:#f1ede4; --paper-deep:#e5ddcf;
+    --mist:#83796a; --mist-light:#a89f8f; --seal:#9c2f22;
+    --line: rgba(28,26,23,0.14); --line-strong: rgba(28,26,23,0.28);
+    --max: 760px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+
+  .site-nav{
+    position:fixed; top:20px; left:24px; z-index:90;
+    font-weight:600; font-size:13px; color:var(--mist); text-decoration:none;
+    padding:6px 12px; border-radius:20px; background:rgba(241,237,228,0.9);
+  }
+
+  /* ---------- GATE ---------- */
+  #gate{
+    position:fixed; inset:0; background:var(--paper); z-index:1000;
+    display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .gate-box{ max-width:340px; width:100%; text-align:center; }
+  .gate-box .eyebrow{
+    font-weight:600; font-size:12.5px; letter-spacing:0.16em; color:var(--mist);
+    text-transform:uppercase; margin-bottom:16px; display:block;
+  }
+  .gate-box h1{ font-weight:800; font-size:24px; margin-bottom:10px; }
+  .gate-box p{ font-size:14px; color:var(--mist); margin-bottom:28px; }
+  #gate-input{
+    width:100%; padding:13px 16px; border:1px solid var(--line-strong);
+    border-radius:4px; background:#fff; font-size:15px; font-family:inherit;
+    text-align:center; outline:none;
+  }
+  #gate-input:focus{ border-color:var(--seal); }
+  #gate-error{ color:var(--seal); font-size:13px; margin-top:10px; height:16px; }
+  #gate-submit{
+    margin-top:14px; width:100%; padding:13px; border:none; border-radius:4px;
+    background:var(--ink); color:var(--paper); font-weight:700; font-size:14px;
+    font-family:inherit; cursor:pointer;
+  }
+
+  /* ---------- CONTENT ---------- */
+  #content{ display:none; }
+  header{ padding:90px 28px 50px; }
+  .eyebrow{
+    font-weight:600; font-size:12.5px; letter-spacing:0.16em; color:var(--seal);
+    text-transform:uppercase; margin-bottom:16px; display:block;
+  }
+  h1.title{ font-weight:800; font-size:clamp(28px, 5.5vw, 40px); letter-spacing:-0.02em; }
+  .tagline{ margin-top:14px; font-size:15.5px; color:var(--mist); max-width:56ch; }
+
+  section.rm{ padding:44px 0; border-top:1px solid var(--line); }
+  .sec-title{ font-weight:800; font-size:clamp(20px, 3.2vw, 25px); margin-bottom:22px; }
+
+  .entry{ display:grid; grid-template-columns:100px 1fr; gap:16px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .entry:first-child{ border-top:1px solid var(--line); }
+  .entry-date{ font-weight:700; font-size:13px; color:var(--mist-light); padding-top:1px; }
+  .entry-role{ font-weight:700; font-size:15.5px; }
+  .entry-org{ font-size:13.5px; color:var(--mist); margin-top:4px; }
+  .entry ul{ margin-top:6px; padding-left:16px; }
+  .entry li{ font-size:14px; color:#3a362f; margin-top:3px; }
+
+  .matrix-row{ display:grid; grid-template-columns:110px 1fr; gap:16px; padding:13px 0; border-bottom:1px solid var(--line); align-items:baseline; }
+  .matrix-row:first-child{ border-top:1px solid var(--line); }
+  .matrix-cat{ font-weight:700; font-size:14px; }
+  .matrix-cat.empty{ color:var(--seal); }
+  .matrix-val{ font-size:13.5px; color:var(--mist); }
+
+  .vision-block{ background:var(--paper-deep); padding:26px; border-radius:4px; margin-bottom:8px; }
+  .vision-block p{ font-size:15px; color:#2c2a26; }
+  .vision-block p + p{ margin-top:12px; }
+
+  .bucket-group{ margin-bottom:22px; }
+  .bucket-label{ font-weight:700; font-size:13.5px; color:var(--seal); margin-bottom:6px; }
+  .bucket-items{ font-size:14.5px; color:#3a362f; line-height:1.8; }
+
+  footer{ padding:60px 0 90px; border-top:1px solid var(--line); text-align:center; }
+  footer p{ font-weight:500; font-size:16px; color:var(--mist); }
+
+  @media (max-width:520px){
+    .entry, .matrix-row{ grid-template-columns:1fr; gap:4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 이 페이지는 클라이언트 사이드 비밀번호 체크만 씀. 정적 사이트라 콘텐츠는
+     이미 이 파일 안에 다 담겨 배포되고, 게이트는 캐주얼한 접근을 막는 정도지
+     실제 보안은 아님 (보고 싶으면 페이지 소스에서 다 보임). 진짜 민감한 정보는
+     이 파일을 공개 저장소/배포에서 아예 빼는 걸 권장. -->
+
+<div id="gate">
+  <div class="gate-box">
+    <span class="eyebrow">Private</span>
+    <h1>인생 로드맵</h1>
+    <p>비밀번호를 입력하세요</p>
+    <input type="password" id="gate-input" autocomplete="off" />
+    <div id="gate-error"></div>
+    <button id="gate-submit">입장</button>
+  </div>
+</div>
+
+<a href="index.html" class="site-nav">← 홈</a>
+
+<div id="content">
+  <header>
+    <span class="eyebrow">Private — 인생 로드맵</span>
+    <h1 class="title">글로벌 · 부동산 · 네트워크<br>하이엔드 · 뷰티웰니스 · 브랜딩</h1>
+    <p class="tagline">지금 벌이고 있는 것들이 최종적으로 어디로 수렴하는지, 그리고 그 사이 나이대별로 뭘 채워야 하는지 정리한 내부 문서.</p>
+  </header>
+
+  <div class="wrap">
+
+    <section class="rm">
+      <h2 class="sec-title">최종 비전</h2>
+      <div class="vision-block">
+        <p><strong>동양풍 미학의 하이엔드 웰니스 공간을, 글로벌 리조트 지역마다 만든다.</strong> 바·클럽·카페·숙박·사우나·명상실·미술관이 한 곳에 있는 형태이고, 지금 쌓은 네트워크(파운더스살롱, 인베스터클럽, F&B, 인수창업 커뮤니티)가 그 첫 손님이자 파트너가 된다.</p>
+        <p>지금 벌이는 7개는 전부 이 최종 그림의 부품 공급처다 — 브랜딩·굿즈 역량(포토부스), 뷰티웰니스 실무(뷰티 브랜드), 부동산 실전 경험(경매 플랫폼), 자본·엑싯 트랙레코드(B2B SaaS), 사람(파운더스살롱·인베스터클럽), 채널(팟캐스트·매거진).</p>
+      </div>
+    </section>
+
+    <section class="rm">
+      <h2 class="sec-title">나이대별 계획</h2>
+      <div class="entry">
+        <div class="entry-date">20대 안</div>
+        <div>
+          <div class="entry-role">자산 20억 (부동산 제외)</div>
+          <ul>
+            <li>여러 벤처 병렬 운영 (오퍼레이터 단계)</li>
+            <li>20억+ 엑싯 최소 1회 (1차 후보: B2B SaaS)</li>
+            <li>글로벌 네트워크, 레거시 대표·부동산 쩐주, 투자사 네트워크 확보</li>
+            <li>결혼 (시기 무관, 시스템 완성 시점 고려해 자녀 계획)</li>
+            <li>서울 아파트 한 채로 주거 완성</li>
+            <li>부동산: 매매사업자 빌라 단타(6개월 회전) + 재개발 빌라투자 + 청약 동시 진행</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="entry-date">30대 초</div>
+        <div>
+          <div class="entry-role">자산 50억</div>
+          <ul>
+            <li>실무 은퇴, 경영 관여로 전환</li>
+            <li>벤처투자·투자업 개시</li>
+            <li>기업 피드백 컨설팅 시작 (투자자문·경영자문 — Series A 자문 경험의 확장판)</li>
+            <li>별장·오피스텔 등 지역거점 마련 (거주 아닌 사업 확장 목적)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="entry-date">30대 후</div>
+        <div>
+          <div class="entry-role">자산 200억</div>
+          <ul><li>자본배분자 전환 본격화</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="rm">
+      <h2 class="sec-title">사업 네트워크 매트릭스</h2>
+      <div class="matrix-row"><div class="matrix-cat">금융</div><div class="matrix-val">인베스터클럽 동창회장, 부동산 경매 플랫폼</div></div>
+      <div class="matrix-row"><div class="matrix-cat">벤처대표</div><div class="matrix-val">파운더스살롱, 팟캐스트·매거진, B2B SaaS, 인수창업 네트워크(정모 주관) + 기업 피드백 컨설팅(확장 예정)</div></div>
+      <div class="matrix-row"><div class="matrix-cat">부동산</div><div class="matrix-val">경매 플랫폼, 개인 투자(매매사업자·재개발·청약)</div></div>
+      <div class="matrix-row"><div class="matrix-cat">F&B·리테일</div><div class="matrix-val">포토부스, 개인사업자(식품·잡화 수출입), F&B 핫플레이스 네트워크</div></div>
+      <div class="matrix-row"><div class="matrix-cat">해외 네트워크</div><div class="matrix-val">포토부스 글로벌 확장(미국·인도네시아 등), 뷰티 수출</div></div>
+      <div class="matrix-row"><div class="matrix-cat">메디컬</div><div class="matrix-val">뷰티(더마 코스메틱) 인접 — 부분 커버</div></div>
+      <div class="matrix-row"><div class="matrix-cat empty">인플루언서</div><div class="matrix-val">공백 — 의도적으로 비워둠</div></div>
+    </section>
+
+    <section class="rm">
+      <h2 class="sec-title">현재 벤처 → 최종 비전 연결</h2>
+      <div class="matrix-row"><div class="matrix-cat">포토부스</div><div class="matrix-val">굿즈·브랜딩 역량, 해외 진출 경험 → 글로벌 + 브랜딩</div></div>
+      <div class="matrix-row"><div class="matrix-cat">뷰티 브랜드</div><div class="matrix-val">수출 실무, 뷰티 산업 이해 → 글로벌(달러벌이) + 뷰티웰니스</div></div>
+      <div class="matrix-row"><div class="matrix-cat">부동산 경매</div><div class="matrix-val">부동산 네트워크, 직접 투자 경험 → 부동산(재개발·상업용 확장의 토대)</div></div>
+      <div class="matrix-row"><div class="matrix-cat">B2B SaaS</div><div class="matrix-val">B2B 영업력, 엑싯 트랙레코드 → 20대 엑싯 목표 직결</div></div>
+      <div class="matrix-row"><div class="matrix-cat">파운더스살롱</div><div class="matrix-val">사업가·투자자 네트워크 총집합 → 네트워크(허브)</div></div>
+      <div class="matrix-row"><div class="matrix-cat">인베스터클럽</div><div class="matrix-val">금융 네트워크 → 네트워크 + 쩐주 확보</div></div>
+      <div class="matrix-row"><div class="matrix-cat">팟캐스트·매거진</div><div class="matrix-val">노출 채널, 콘텐츠 복리자산 → 브랜딩 + 네트워크</div></div>
+    </section>
+
+    <section class="rm">
+      <h2 class="sec-title">버킷리스트</h2>
+
+      <div class="bucket-group">
+        <div class="bucket-label">경험 · 도전</div>
+        <div class="bucket-items">모든 스포츠 다 해보기 · 모든 나라 다 가보기 · 몽골 매년 말타러 가기 · 텍사스에서 말타기 · 각 나라의 리조트 가보기</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">공간 만들기</div>
+        <div class="bucket-items">바 · 클럽 · 카페 · 숙박 · 명상+차 마시는 공간 · 재즈/음악 듣는 공간 · 전용 사우나 · 내 미술관(전시회) · 동양풍 컨셉 공간 다수</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">정적 경험</div>
+        <div class="bucket-items">절 가기</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">창작</div>
+        <div class="bucket-items">노래 만들어서 내 클럽·바에 틀기 · 책 내기</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">웰빙 · 건강</div>
+        <div class="bucket-items">매일 밤 마사지+회 · 아침 일찍 운동 · 건강하게 살기 · 좋은 와인 마셔보기</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">지적 성장</div>
+        <div class="bucket-items">철학 공부하기 · 역사 · 문화</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">동물 · 생활</div>
+        <div class="bucket-items">그레이하운드 · 고양이 · 식물 키우기</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">지적 유산</div>
+        <div class="bucket-items">나만의 교육 · 인생철학 · 로드맵 고안하기 (책, 장학재단, 멘토링의 콘텐츠 원천)</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">환원</div>
+        <div class="bucket-items">멘토링하기 · 교육 및 장학재단 세우기</div>
+      </div>
+      <div class="bucket-group">
+        <div class="bucket-label">일 + 여행 결합</div>
+        <div class="bucket-items">동남아 휴양지 · 미국 · 유럽에 오프라인 비즈니스 만들어 매년 가족과 일+여행 겸행</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer><div class="wrap"><p>계속 만들어가는 중이다.</p></div></footer>
+</div>
+
+<script>
+  var PW = "김경서";
+  var input = document.getElementById('gate-input');
+  var err = document.getElementById('gate-error');
+
+  function tryUnlock(){
+    if(input.value === PW){
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    } else {
+      err.textContent = '틀렸어요';
+      input.value = '';
+      input.focus();
+    }
+  }
+  document.getElementById('gate-submit').addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') tryUnlock(); });
+  input.focus();
+</script>
+
+</body>
+</html>

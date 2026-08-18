@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>안순찬 — CV</title>
+<title>안순찬</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/[email protected]/dist/web/variable/pretendardvariable.css" />
 <style>
   :root{
@@ -14,377 +14,95 @@
     --mist-light:#a89f8f;
     --seal:#9c2f22;
     --line: rgba(28,26,23,0.14);
-    --line-strong: rgba(28,26,23,0.28);
-    --max: 760px;
+    --max: 640px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
   body{
-    background:var(--paper);
-    color:var(--ink);
+    background:var(--paper); color:var(--ink);
     font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-    line-height:1.7;
+    min-height:100vh; display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    padding:40px 24px; position:relative; overflow:hidden;
     -webkit-font-smoothing:antialiased;
   }
-  a{ color:inherit; }
-  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+  a{ color:inherit; text-decoration:none; }
 
-  .site-nav{
-    position:fixed; top:20px; right:24px; z-index:90;
-    font-weight:600; font-size:13px; color:var(--mist); text-decoration:none;
-    padding:6px 12px; border-radius:20px;
-    background:rgba(241,237,228,0.9); backdrop-filter:blur(4px);
-  }
-  .site-nav:hover{ color:var(--ink); }
-
-  /* ---------- HEADER (compact, document-style — not a full hero) ---------- */
-  header{
-    padding:90px 28px 56px;
-    position:relative; overflow:hidden;
-  }
   .ink-mark{
-    position:absolute; top:-30%; right:-6%;
-    width:180px; height:180px;
-    z-index:0; pointer-events:none; opacity:0.55;
+    position:absolute; top:-10%; left:50%; transform:translateX(-50%);
+    width:340px; height:340px; z-index:0; pointer-events:none; opacity:0.5;
   }
   .ink-mark span{ position:absolute; border-radius:50%; mix-blend-mode:multiply; }
   .ink-mark span:nth-child(1){
-    width:80%; height:70%; top:10%; left:8%;
-    background:radial-gradient(ellipse at 42% 40%, rgba(28,26,23,0.85), rgba(28,26,23,0.4) 55%, transparent 76%);
-    transform:rotate(-6deg); filter:blur(3px);
+    width:78%; height:66%; top:14%; left:11%;
+    background:radial-gradient(ellipse at 42% 40%, rgba(28,26,23,0.8), rgba(28,26,23,0.4) 55%, transparent 76%);
+    filter:blur(4px);
   }
   .ink-mark span:nth-child(2){
-    width:26%; height:26%; top:55%; left:14%;
-    background:radial-gradient(circle at 50% 50%, rgba(156,47,34,0.8), transparent 72%);
-    filter:blur(2px);
+    width:24%; height:24%; top:56%; left:60%;
+    background:radial-gradient(circle at 50% 50%, rgba(156,47,34,0.75), transparent 72%);
+    filter:blur(3px);
   }
-  @media (max-width:600px){ .ink-mark{ width:120px; height:120px; top:2%; right:-8%; } }
 
-  .header-content{ position:relative; z-index:1; max-width:var(--max); margin:0 auto; }
+  .wrap{ position:relative; z-index:1; max-width:var(--max); width:100%; text-align:center; }
   .eyebrow{
-    font-weight:600; font-size:12.5px; letter-spacing:0.16em;
-    color:var(--mist); text-transform:uppercase; margin-bottom:18px; display:block;
-    font-variant-numeric: tabular-nums;
+    font-weight:600; font-size:12.5px; letter-spacing:0.16em; color:var(--mist);
+    text-transform:uppercase; margin-bottom:20px; display:block;
   }
-  h1.name{
-    font-weight:800; font-size:clamp(32px, 6vw, 48px);
-    letter-spacing:-0.02em; line-height:1.1;
+  h1{
+    font-weight:800; font-size:clamp(32px, 7vw, 48px);
+    letter-spacing:-0.02em; margin-bottom:14px;
   }
-  .tagline{
-    margin-top:14px; font-size:16.5px; color:var(--mist); max-width:56ch; line-height:1.7;
-  }
-  .meta-row{
-    margin-top:22px; display:flex; flex-wrap:wrap; gap:8px 10px;
-  }
-  .meta-tag{
-    font-size:12.5px; font-weight:600; color:var(--ink);
-    background:var(--paper-deep); padding:5px 12px; border-radius:20px;
-  }
+  .sub{ font-size:16px; color:var(--mist); max-width:44ch; margin:0 auto 48px; line-height:1.7; }
 
-  /* ---------- SECTIONS ---------- */
-  section.cv{ padding:46px 0; border-top:1px solid var(--line); }
-  .sec-head{
-    display:flex; align-items:baseline; gap:12px; margin-bottom:26px;
+  nav.menu{ display:flex; flex-direction:column; gap:14px; }
+  .menu-item{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 24px; border:1px solid var(--line); border-radius:6px;
+    background:rgba(255,255,255,0.3);
+    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
   }
-  .sec-num{
-    font-weight:700; font-size:12.5px; color:var(--seal); font-variant-numeric: tabular-nums;
-  }
-  .sec-title{
-    font-weight:800; font-size:clamp(20px, 3.2vw, 25px); letter-spacing:-0.01em;
-  }
+  .menu-item:hover{ border-color:var(--line-strong,rgba(28,26,23,.3)); background:rgba(255,255,255,0.55); transform:translateX(2px); }
+  .menu-title{ font-weight:700; font-size:17px; }
+  .menu-desc{ font-size:12.5px; color:var(--mist-light); margin-top:3px; }
+  .menu-arrow{ font-weight:700; color:var(--mist); font-size:15px; }
+  .menu-item.locked .menu-arrow{ color:var(--seal); }
+  .menu-item.locked .menu-desc{ color:var(--seal); }
 
-  .entry{
-    display:grid; grid-template-columns:118px 1fr; gap:18px;
-    padding:18px 0; border-bottom:1px solid var(--line);
-  }
-  .entry:first-child{ border-top:1px solid var(--line); }
-  .entry-date{
-    font-weight:600; font-size:12.5px; color:var(--mist-light);
-    font-variant-numeric: tabular-nums; line-height:1.5; padding-top:2px;
-  }
-  .entry-role{ font-weight:700; font-size:16px; }
-  .entry-org{
-    font-weight:500; font-size:13.5px; color:var(--seal); margin-top:3px;
-  }
-  .entry ul{ margin-top:8px; padding-left:16px; }
-  .entry li{ font-size:14.5px; color:#3a362f; margin-top:4px; }
-  .entry .note{
-    font-size:12px; color:var(--mist-light); font-style:italic; margin-top:6px;
-  }
-
-  /* compact list variant for awards/certs/etc. */
-  .list-entry{
-    display:grid; grid-template-columns:88px 1fr; gap:18px;
-    padding:14px 0; border-bottom:1px solid var(--line);
-  }
-  .list-entry:first-child{ border-top:1px solid var(--line); }
-  .list-entry .entry-date{ padding-top:1px; }
-  .list-entry .entry-role{ font-size:15px; }
-  .list-entry .entry-org{ font-size:13px; margin-top:2px; color:var(--mist); }
-
-  footer{
-    padding:60px 0 90px; border-top:1px solid var(--line);
-    text-align:center;
-  }
-  footer p{ font-weight:500; font-size:17px; color:var(--mist); }
-  footer .stamp{
-    margin-top:14px; font-weight:600; font-size:11px;
-    letter-spacing:0.14em; color:var(--mist-light); text-transform:uppercase;
-    font-variant-numeric: tabular-nums;
-  }
-
-  @media (max-width:560px){
-    .entry, .list-entry{ grid-template-columns:1fr; gap:6px; }
-    .entry-date{ padding-top:0; }
-  }
+  footer{ margin-top:56px; font-size:12px; color:var(--mist-light); font-weight:600; letter-spacing:0.08em; }
 </style>
 </head>
 <body>
-
-<a href="values.html" class="site-nav">가치관 53 →</a>
-
-<header>
   <div class="ink-mark" aria-hidden="true"><span></span><span></span></div>
-  <div class="header-content">
-    <span class="eyebrow">Curriculum Vitae</span>
-    <h1 class="name">안순찬</h1>
-    <p class="tagline">여러 사업을 동시에 만들며, 오퍼레이터에서 자본배분자로 가는 중. 건축을 전공하며 구조를 먼저 보는 사고를 익혔고, 지금은 그 방식을 여러 산업에 적용하고 있다.</p>
-    <div class="meta-row">
-      <span class="meta-tag">건축공학 · 벤처경영</span>
-      <span class="meta-tag">리테일 · 뷰티 · 프롭테크 · 미디어</span>
-      <span class="meta-tag">투자 · IR · 신사업전략</span>
-    </div>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <section class="cv">
-    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">학력</h2></div>
-
-    <div class="entry">
-      <div class="entry-date">2020.01<br>—현재</div>
-      <div>
-        <div class="entry-role">서울대학교 건축공학과</div>
-        <div class="entry-org">벤처경영 연합전공</div>
-        <ul><li>In-major GPA 3.99/4.3 · CGPA 3.9/4.3</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2020<br>—2025</div>
-      <div>
-        <div class="entry-role">수혜 장학재단</div>
-        <ul>
-          <li>한국장학재단 대통령과학장학생 (2020)</li>
-          <li>관정이종환 교육재단 국내학사 장학생 (2023)</li>
-          <li>SK고등교육재단 문우림 장학생 (2024)</li>
-          <li>태광그룹 일주학술문화재단 국내학사 장학생 (2024)</li>
-          <li>해석 정해영 선생 장학문화재단 (2024)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="cv">
-    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">경력</h2></div>
-
-    <div class="entry">
-      <div class="entry-date">2026.06<br>—2026.07</div>
-      <div>
-        <div class="entry-role">Series A 펀딩 · IR 컨설팅 (Agent)</div>
-        <div class="entry-org">바이오헬스 스타트업</div>
-        <ul><li>Series A 펀딩 전략 수립 및 IR 컨설팅, 용역 대행</li></ul>
-        <p class="note">NDA 체결로 사명 비공개</p>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2026.05<br>—현재</div>
-      <div>
-        <div class="entry-role">공동창업자</div>
-        <div class="entry-org">부동산 경매 · NPL 교육 플랫폼</div>
-        <ul><li>강의 플랫폼 구축, 네트워크 전략 수립 및 운영</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2026.02<br>—현재</div>
-      <div>
-        <div class="entry-role">공동창업자</div>
-        <div class="entry-org">미디어 · 콘텐츠 (팟캐스트 · 인터뷰 · 매거진)</div>
-        <ul><li>창업자 인터뷰 미디어 기획 및 운영</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2026.02<br>—현재</div>
-      <div>
-        <div class="entry-role">공동창업자 · CSO</div>
-        <div class="entry-org">리테일 · 굿즈 브랜드 (포토부스 프랜차이즈)</div>
-        <ul><li>투자 및 자금 유치, 가맹 확장</li><li>미국 · 인도네시아 등 글로벌 진출 총괄</li><li>IP · 굿즈 신사업 전략 총괄</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2026.02<br>—현재</div>
-      <div>
-        <div class="entry-role">팀 리더</div>
-        <div class="entry-org">뷰티 · 코스메틱 브랜드</div>
-        <ul><li>미국 수출 총괄 담당 및 신사업 전략 구축</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2025.07<br>—2025.12</div>
-      <div>
-        <div class="entry-role">공동창업자 · COO</div>
-        <div class="entry-org">AI 기반 이커머스 M&A 플랫폼</div>
-        <ul><li>운영총괄, 실사 및 분석보고서 구조 고도화, M&A 과정 중개</li><li>SEED 투자 및 TIPS 일반트랙 유치 진행</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2025.07<br>—2025.12</div>
-      <div>
-        <div class="entry-role">팀 리더</div>
-        <div class="entry-org">금융그룹 투자자 커뮤니티 1기</div>
-        <ul><li>산업분석 · 투자분석 보고서 다수 작성</li><li>팀 활동 대상(1등) 수상, 초대 동창회장 역임</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2025.09<br>—2025.12</div>
-      <div>
-        <div class="entry-role">수료 (Member)</div>
-        <div class="entry-org">국제 M&A 실무교육 과정 5기</div>
-        <ul><li>Valuation · DD · Financing · IP · Legal · PMI 등 크로스보더 M&A 전분야 수강</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2024.06<br>—2024.08</div>
-      <div>
-        <div class="entry-role">인턴</div>
-        <div class="entry-org">대학 산하 기술지주회사 (AC)</div>
-        <ul><li>투자심사보고서 작성, IR 미팅 참여, 기업분석, 펀드관리, 수익률 계산</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2024.09<br>—2025.08</div>
-      <div>
-        <div class="entry-role">투자팀 리더</div>
-        <div class="entry-org">교내 투자 · 경영 학회</div>
-        <ul><li>행동경제학적 설계를 통한 ESG 활동 효과성 분석</li><li>탄소크레딧 파생상품화 헷지 옵션 투자상품 개발</li></ul>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">2024.01<br>—2024.08</div>
-      <div>
-        <div class="entry-role">운영전략팀 리더</div>
-        <div class="entry-org">교내 시니어산업 학회</div>
-        <ul><li>시니어 산업 스타트업 협업, 컨퍼런스 개최 주관</li><li>시니어 대상 미팅 서비스 플랫폼 기획 및 MVP 테스트</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="cv">
-    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">수상</h2></div>
-
-    <div class="list-entry">
-      <div class="entry-date">2025</div>
-      <div><div class="entry-role">DB보험금융공모전 (팀장)</div><div class="entry-org">투자거주형 실버타운 리츠 상품 개발</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2025</div>
-      <div><div class="entry-role">서울대 공과대학 건축전 (팀장)</div><div class="entry-org">재해복구 오리가미 구조 주택 클러스터 설계</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2023</div>
-      <div><div class="entry-role">관광분야 GenAI 해커톤 (팀장)</div><div class="entry-org">이미지 기반 관광 추천 서비스</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2023</div>
-      <div><div class="entry-role">공군창업경진대회 (팀장)</div><div class="entry-org">반려견 산책 기반 소셜 플랫폼</div></div>
-    </div>
-  </section>
-
-  <section class="cv">
-    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">자격증</h2></div>
-
-    <div class="list-entry">
-      <div class="entry-date">2026.08<br>예정</div>
-      <div><div class="entry-role">CFA Level 1</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2025.11</div>
-      <div><div class="entry-role">벤처투자분석사</div><div class="entry-org">KVCA</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2025.11</div>
-      <div><div class="entry-role">글로벌 M&A 전문가</div><div class="entry-org">KITIA</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2024</div>
-      <div><div class="entry-role">투자자산운용사</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2023</div>
-      <div><div class="entry-role">TESAT Rank S</div><div class="entry-org">상위 3%</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2022</div>
-      <div><div class="entry-role">컴활 1급 · 회계관리 1급</div></div>
-    </div>
-  </section>
-
-  <section class="cv">
-    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">기타 활동</h2></div>
-
-    <div class="list-entry">
-      <div class="entry-date">2022</div>
-      <div><div class="entry-role">건축사사무소 인턴</div><div class="entry-org">근린생활시설 외벽 디자인 · 공모전 설계 참여</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2024</div>
-      <div><div class="entry-role">차세대 건설리더 아카데미 21기 수료</div><div class="entry-org">건설 현장 실무 프로젝트, CM 및 산업 분석</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2020<br>—2022</div>
-      <div><div class="entry-role">건축학과 학생회 기획국장 · 기자단장</div><div class="entry-org">건축가 · 교수 · CEO 인터뷰 진행</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2025</div>
-      <div><div class="entry-role">교내 축제 푸드부스 운영총괄</div><div class="entry-org">신메뉴 개발 · 생산 자동화, 매출 100만원</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2025</div>
-      <div><div class="entry-role">해외 문화탐방 프로그램</div><div class="entry-org">미술경매 산업 구조 분석</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2021<br>—2025</div>
-      <div><div class="entry-role">교내 멘토링 프로그램 다수</div><div class="entry-org">한국어 멘토, 신입생 멘토링 등</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2025.05<br>—현재</div>
-      <div><div class="entry-role">개인사업자 운영</div><div class="entry-org">수출입 · 도소매 (식품 · 잡화 · 전자기기)</div></div>
-    </div>
-    <div class="list-entry">
-      <div class="entry-date">2026.02<br>—2027.01</div>
-      <div><div class="entry-role">한국장학재단 창업기숙사</div><div class="entry-org">서울지부 입주</div></div>
-    </div>
-  </section>
-
-</div>
-
-<footer>
   <div class="wrap">
-    <p>계속 만들어가는 중이다.</p>
-    <span class="stamp">Operator → Allocator</span>
-  </div>
-</footer>
+    <span class="eyebrow">안순찬</span>
+    <h1>여러 사업을 동시에 만들며,<br>오퍼레이터에서 자본배분자로.</h1>
+    <p class="sub">건축을 전공하며 구조를 먼저 보는 사고를 익혔고, 지금은 그 방식을 여러 산업에 적용하고 있다.</p>
 
+    <nav class="menu">
+      <a href="cv.html" class="menu-item">
+        <div>
+          <div class="menu-title">CV</div>
+          <div class="menu-desc">학력 · 경력 · 수상 · 자격증</div>
+        </div>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="values.html" class="menu-item">
+        <div>
+          <div class="menu-title">가치관</div>
+          <div class="menu-desc">54개의 원칙 — 사유, 관계, 돈, 죽음을 다루는 방식</div>
+        </div>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="roadmap.html" class="menu-item locked">
+        <div>
+          <div class="menu-title">인생 로드맵</div>
+          <div class="menu-desc">🔒 비공개 — 암호 필요</div>
+        </div>
+        <span class="menu-arrow">→</span>
+      </a>
+    </nav>
+
+    <footer>계속 만들어가는 중이다.</footer>
+  </div>
 </body>
 </html>
