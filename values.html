@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>가치관 체계 — 53개의 원칙</title>
+<title>가치관 체계 — 54개의 원칙</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/[email protected]/dist/web/variable/pretendardvariable.css" />
 <style>
   :root{
@@ -125,6 +125,20 @@
   }
   .intro p + p{ margin-top:20px; }
   .intro strong{ font-weight:700; }
+  .faq{ margin-top:36px; display:flex; flex-direction:column; gap:18px; }
+  .faq-item{
+    background:rgba(255,255,255,0.35); border:1px solid var(--line);
+    border-radius:8px; padding:18px 20px;
+  }
+  .faq-q{
+    display:block; font-weight:700; font-size:13px; letter-spacing:0.04em;
+    color:var(--seal); margin-bottom:8px;
+  }
+  .faq-item p{ font-size:14.5px; color:var(--mist); line-height:1.7; }
+  .intro .faq-note{
+    display:block; margin-top:18px; font-size:11px; color:var(--mist-light);
+    font-style:italic; letter-spacing:0.02em;
+  }
 
   /* ---------- PARTS ---------- */
   .part{
@@ -174,6 +188,11 @@
     font-weight:700; font-style:normal; font-size:11px; font-variant-numeric: tabular-nums;
     color:var(--seal); letter-spacing:0.08em; margin-right:6px;
   }
+  .item .desc + .desc{ margin-top:10px; }
+  .item .example + .example{ margin-top:8px; }
+  .item .example ul{ list-style:none; }
+  .item .example li{ margin-top:6px; }
+  .item .example li:first-child{ margin-top:0; }
 
   /* metaphysics part gets quiet visual distinction */
   #part-10{ background:var(--paper-deep); margin:0 -28px; padding:78px 28px; }
@@ -210,17 +229,29 @@
 <section class="hero">
   <div class="ink-mark" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="hero-content">
-    <span class="eyebrow">Personal Constitution — 53 Principles</span>
+    <span class="eyebrow">Personal Constitution — 54 Principles</span>
     <h1 class="title">깊은 생각은<br>자기파괴로 갈 수도,<br>해방으로 갈 수도 있다.</h1>
-    <p class="hero-sub">그 갈림길에서 스스로 세운 53개의 원칙. 사업, 관계, 시간, 죽음을 다루는 방식을 한 사람이 오래 생각한 흔적으로 남긴다.</p>
-    <span class="scroll-cue">↓ SCROLL — 10 PARTS, 53 PRINCIPLES</span>
+    <p class="hero-sub">그 갈림길에서 스스로 세운 54개의 원칙. 사업, 관계, 시간, 죽음을 다루는 방식을 한 사람이 오래 생각한 흔적으로 남긴다.</p>
+    <span class="scroll-cue">↓ SCROLL — 10 PARTS, 54 PRINCIPLES</span>
   </div>
 </section>
 
 <div class="wrap">
   <div class="intro">
-    <p>이 원칙들은 <strong>완성된 결론이 아니라 잠정적 가설</strong>이다. 대부분은 하나의 조작으로 수렴한다 — 사회가, 타인이, 시장이 이미 정해둔 기준을 그대로 받지 않고, 스스로 다시 세운 기준으로 대체하는 것.</p>
-    <p>그 원칙이 통하지 않는 자리도 하나 있다 — 사랑. 나머지는 혼자서도 다 겪어볼 수 있지만, 그것만은 타인의 자유의지라는 통제 불가능한 변수를 그대로 남겨두기로 했다.</p>
+    <p>나는 사유가 위험할 수 있다는 걸 안다 — 답 없는 질문을 끝까지 파고들면 오히려 무너질 수 있다는 걸. 그래서 완결된 답을 찾는 대신, 직접 겪어보고 검증한 잠정적 답으로 산다. 어차피 확정할 수 없다면, 평생 고쳐 쓰는 쪽을 택한다.</p>
+    <p>그 잠정적 답에 무게를 실어주는 건 유한성이다. 언젠가 다 끝난다는 사실이 지금의 선택을 아무렇게나 미뤄도 되는 게 아니게 만든다. 그래서 세상이 이미 정해둔 기준 — 사회적 성공, 타인의 기대, 지위, 비교 — 을 그대로 받지 않고, 매번 다시 검증해서 내 기준으로 대체한다. 그렇게 얻은 게 자유다.</p>
+    <p>그 자유로 하는 일은 하나다. 아직 없는 걸 만들고, 그 과정을 혼자 하지 않는 것. 사업이든 관계든, 이미 있는 것에 올라타기보다 처음부터 함께 만들어가는 쪽을 택해왔다.</p>
+    <div class="faq">
+      <div class="faq-item">
+        <span class="faq-q">왜 사니?</span>
+        <p>확정된 이유는 없다고 본다. 다만 언젠가 다 끝난다는 걸 알아서, 그 유한함이 지금의 선택에 무게를 준다. 그 안에서 아직 없던 걸 만들고, 그 과정을 혼자 하지 않는 것 — 지금까지 찾은 가장 그럴듯한 답이다. 정답이 아니라 계속 검증 중인 가설.</p>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">어떻게 살고싶어?</span>
+        <p>후회 없이. 두려움이나 충동에 끌려가지 않고, 매 순간 내가 정한 기준으로 선택하면서. 세상이 이미 정해둔 기준(성공, 지위, 비교)에 휘둘리지 않고, 어제의 나와만 비교하면서. 결과보다 그 순간 최선을 다했는가로 나를 평가하면서.</p>
+      </div>
+    </div>
+    <span class="faq-note">잠정적 요약, 계속 갱신됨</span>
   </div>
 </div>
 
@@ -253,10 +284,11 @@
   <div class="items">
     <article class="item"><span class="num">09</span><div><h3>기대값 비대칭</h3><p class="desc">타인의 부정적 행동은 0, 긍정적 행동은 플러스로 처리해 기대값을 항상 양수로 만든다.</p><p class="example"><span class="tag">예</span>여러 나라 파트너와의 협상이 결렬돼도 손실로 안 잡히는 구조.</p></div></article>
     <article class="item"><span class="num">10</span><div><h3>비교축 = 과거의 나</h3><p class="desc">비교 대상은 오직 과거의 나. 외부 자극은 성장 재료로만 소비한다.</p><p class="example"><span class="tag">예</span>돈을 목적으로 삼았을 때 오히려 불행해졌던 경험 이후 기준을 재조정한 것.</p></div></article>
-    <article class="item"><span class="num">11</span><div><h3>무해악 원칙과 화 없음</h3><p class="desc">악의나 의도가 없으면 화가 나지 않는다.</p><p class="example"><span class="tag">예</span>가까운 가족이 여전히 보호적인 태도를 보여도 악의로 안 보고 묵묵히 곁을 지키는 것.</p></div></article>
+    <article class="item"><span class="num">11</span><div><h3>무해악 원칙과 화 없음</h3><p class="desc">악의나 의도가 없으면 화가 나지 않는다.</p><p class="desc">다만 이 원칙에는 구조적 빈틈이 하나 있다 — 기준은 타인 지향적이지만, 그 기준을 충족했는지 판단하는 절차는 여전히 나 혼자 완결한다는 점이다. 그러면 상대가 실제로는 상처받았어도 "난 그럴 의도 없었고 괜찮다고 봤다"로 넘어갈 위험이 생긴다. 그래서 피해 여부를 자기 판단으로 끝내지 않고, 필요할 때는 상대에게 직접 확인하는 절차를 원칙 안에 포함시킨다.</p><p class="example"><span class="tag">예</span>가까운 가족이 여전히 보호적인 태도를 보여도 악의로 안 보고 묵묵히 곁을 지키는 것.</p><p class="example"><span class="tag">예</span>내 행동이 상대에게 불편했을 수 있다고 판단되면, 스스로 결론 내리지 않고 직접 물어봐서 확인한다.</p></div></article>
     <article class="item"><span class="num">12</span><div><h3>위계 없는 애정</h3><p class="desc">모두에게 애정이 간다. 나도 하찮은 인간임을 자각하는 데서 오는 연민이다.</p><p class="example"><span class="tag">예</span>부모를 아들딸처럼 귀엽게 보는 시선.</p></div></article>
-    <article class="item"><span class="num">13</span><div><h3>투명성으로 관계를 필터링</h3><p class="desc">먼저 평가하지 않고 나를 다 드러내서, 공명하는 소수만 남긴다.</p><p class="example"><span class="tag">예</span>협상에서 원하는 것과 줄 수 있는 것을 먼저 다 꺼내놓는 화법.</p></div></article>
-    <article class="item"><span class="num">14</span><div><h3>위계 없는 대인관계 — 실전에서</h3><p class="desc">누구를 만나도 쫄거나 하대하지 않는다. 비즈니스는 서로 주면 되는 거다.</p><p class="example"><span class="tag">예</span>지위·연차와 무관하게 누구와 미팅해도 같은 톤을 유지하는 것.</p></div></article>
+    <article class="item"><span class="num">13</span><div><h3>타인 = 배움의 원천</h3><p class="desc">타인에게서 항상 나에게 없는 배울 점을 찾으려 한다. 이미 가진 능력을 다른 영역에 적용하는 17번(메타 전이)과 정반대 방향이다 — 내 결핍을 인식하고, 그걸 타인에게서 수입하는 쪽. 남의 장점을 흡수하려는 태도가 기본값이고, 모르는 건 순수하게, 자세히 물어본다.</p><p class="example"><span class="tag">예</span>상대가 나보다 나은 지점을 발견하면 그걸 배우려는 태도가 먼저 나온다.</p><p class="example"><span class="tag">예</span>모르는 걸 부끄러워하지 않고 구체적으로 캐물어서 이해하려 한다.</p></div></article>
+    <article class="item"><span class="num">14</span><div><h3>투명성으로 관계를 필터링</h3><p class="desc">먼저 평가하지 않고 나를 다 드러내서, 공명하는 소수만 남긴다.</p><p class="example"><span class="tag">예</span>협상에서 원하는 것과 줄 수 있는 것을 먼저 다 꺼내놓는 화법.</p></div></article>
+    <article class="item"><span class="num">15</span><div><h3>위계 없는 대인관계 — 실전에서</h3><p class="desc">누구를 만나도 쫄거나 하대하지 않는다. 비즈니스는 서로 주면 되는 거다.</p><p class="desc">다만 이 자신감은 무제한이 아니다. 실시간 상황 판단력에 대한 과신 가능성을 스스로도 인지하고 있고(10번), 그래서 관계 초반에는 의도적으로 먼저 나서지 않고 경청하는 태도를 취해 그 리스크를 상쇄한다.</p><p class="example"><span class="tag">예</span>지위·연차와 무관하게 누구와 미팅해도 같은 톤을 유지하는 것.</p><p class="example"><span class="tag">예</span>새로운 관계나 낯선 자리에서는 먼저 판단을 내리기보다 충분히 듣는 쪽을 택한다.</p></div></article>
   </div>
 </section>
 
@@ -267,9 +299,9 @@
     <p class="part-thesis">언제 무엇을 확정하고, 언제 열어둘 것인가</p>
   </div>
   <div class="items">
-    <article class="item"><span class="num">15</span><div><h3>20대 초반 베이스라인, 이후 미세조정</h3><p class="desc">깊은 사유는 20대 초반 한 번, 이후는 미세조정만 한다.</p><p class="example"><span class="tag">예</span>청소년기에 형성된 방향성이 진로를 창업으로 바꾼 뒤에도 큰 틀은 안 바뀌는 것.</p></div></article>
-    <article class="item"><span class="num">16</span><div><h3>깊이는 전이되는 메타능력</h3><p class="desc">한 분야를 깊이 파면 그 방법 자체가 다른 분야로 전이된다.</p><p class="example"><span class="tag">예</span>전공에서 익힌 구조적 사고를 전혀 다른 업종의 자산 구조 분석에 그대로 적용하는 것.</p></div></article>
-    <article class="item"><span class="num">17</span><div><h3>행복 = 후회 없음, 그리고 세 가지 동기</h3><p class="desc">구현·고도화가 제일 즐겁다. 해보고 싶어서, 재밌어서, 안 하면 후회할 것 같아서.</p><p class="example"><span class="tag">예</span>교육 커리큘럼과 투자 자료를 손수 처음부터 끝까지 구성하는 몰입.</p></div></article>
+    <article class="item"><span class="num">16</span><div><h3>20대 초반 베이스라인, 이후 미세조정</h3><p class="desc">깊은 사유는 20대 초반 한 번, 이후는 미세조정만 한다.</p><p class="example"><span class="tag">예</span>청소년기에 형성된 방향성이 진로를 창업으로 바꾼 뒤에도 큰 틀은 안 바뀌는 것.</p></div></article>
+    <article class="item"><span class="num">17</span><div><h3>깊이는 전이되는 메타능력</h3><p class="desc">한 분야를 깊이 파면 그 방법 자체가 다른 분야로 전이된다.</p><p class="example"><span class="tag">예</span>전공에서 익힌 구조적 사고를 전혀 다른 업종의 자산 구조 분석에 그대로 적용하는 것.</p></div></article>
+    <article class="item"><span class="num">18</span><div><h3>행복 = 후회 없음, 그리고 후회 = 타의가 자의를 대체한 선택</h3><p class="desc">행복을 후회 없는 삶, 내일 죽어도 좋은 삶으로 정의한다. 쾌락과는 다르다 — 쾌락은 그 순간에만 검증되는 감각이라 지나가면 끝이고, 종종 후회로 이어진다. 행복은 시간이 지나 돌아봐도 다시 긍정할 수 있는 상태, 즉 사후 검증을 통과하는 것이다.</p><p class="desc">후회는 결과의 좋고 나쁨이 아니라 "타의가 자의를 대체한 선택"에서 온다. 하고 싶었는데 무섭거나 걱정돼서 안 한 것도 타의(두려움)에 끌려간 것이고, 순간의 충동에 휩쓸린 쾌락도 타의(충동)에 끌려간 것이다 — 방향은 반대(회피 vs 탐닉)지만 구조는 같다. 그래서 후회의 기준은 두 가지다: 그 순간 정말 원했는가(자의의 방향), 그리고 그 선택에 최선을 다했는가(자의의 실행). 둘 다 채워지면 결과와 무관하게 후회가 남지 않는다.</p><p class="desc">이걸 재는 단위는 절대적 시간(오늘, 1년)이 아니라 남은 인생 대비 비율이다 — 지금은 인생의 74%가 남았지만, 부모 세대는 40%, 조부모 세대는 5%만 남았다는 식으로. 같은 하루도 남은 비율에 따라 무게가 달라진다. 이 비율 계산과 별개로, 인생 자체를 하나의 드라마나 영화처럼 보고 스스로를 관객 시점에서 지켜보는 방식도 함께 쓴다 — 자기 경험에서 한 발 떨어져 보면 매몰되지 않고 더 침착하게 선택을 평가할 수 있다.</p><p class="desc">단기 후회와 장기 후회가 갈릴 때는 비가역성(다시 안 올 기회인가)과, 혼자서 성취 가능한가의 여부로 판단한다. 혼자 가능한 것(사업, 도전)은 단기 후회를 더 피하려 하고, 혼자로는 안 되는 것(관계)은 장기적 판단을 더 무겁게 본다 — 이 축은 38번(사랑 = 유일하게 혼자 못 채우는 경험)과 뿌리가 같다.</p><div class="example"><span class="tag">예</span><ul><li>26살인 지금 "인생이 벌써 74%나 남았다"는 식으로 남은 비율을 계산해 하루의 무게를 다시 잡는다.</li><li>새 파트너십을 미룰까 하다 결국 진행했다 — 결과가 안 좋아도 후회는 없다, 그때 원했던 선택이었으니까.</li><li>하고 싶었는데 무섭거나 귀찮아서 안 한 것들을 별도로 의식하고 경계한다.</li></ul></div></div></article>
   </div>
 </section>
 
@@ -280,13 +312,13 @@
     <p class="part-thesis">돈과 에너지를 무엇을 위해 쓸 것인가</p>
   </div>
   <div class="items">
-    <article class="item"><span class="num">18</span><div><h3>낮은 시간단가 = 자유</h3><p class="desc">낮은 시간단가가 오히려 넓은 선택지의 원천이다.</p><p class="example"><span class="tag">예</span>시간당 고수익 전문직이었다면 여러 사업을 동시에 못 벌였을 거라는 자각.</p></div></article>
-    <article class="item"><span class="num">19</span><div><h3>시스템 단가 구축</h3><p class="desc">내 시간이 아닌 시스템·회사가 돈을 버는 구조를 만든다.</p><p class="example"><span class="tag">예</span>코칭이 끝나도 성과가 나면 수익이 발생하는, 개인 시간과 분리된 수익 구조 설계.</p></div></article>
-    <article class="item"><span class="num">20</span><div><h3>낮은 에너지 → 효율 지향</h3><p class="desc">에너지 총량이 적어서 효율적인 걸 좋아한다.</p><p class="example"><span class="tag">예</span>짧은 낮잠, 오래 숨참기 같은 회복 습관.</p></div></article>
-    <article class="item"><span class="num">21</span><div><h3>경험의 무위계, 단련 선호</h3><p class="desc">고통과 행복은 경험의 차이일 뿐 우열이 없다.</p><p class="example"><span class="tag">예</span>원래 약했던 신체 기능을 회피하지 않고 훈련 대상으로 삼은 것.</p></div></article>
-    <article class="item"><span class="num">22</span><div><h3>소비 기준 = 새로움·편안함</h3><p class="desc">가격이 아니라 새로움이나 편안함에 돈을 쓴다.</p><p class="example"><span class="tag">예</span>비싼 것 자체에 의미를 두지 않고, 타인의 시선을 신경 쓰지 않는 소비.</p></div></article>
-    <article class="item"><span class="num">23</span><div><h3>소득과 자산의 분리</h3><p class="desc">노동소득은 자산증식의 재료, 각 사업체는 별개로 키운다.</p><p class="example"><span class="tag">예</span>여러 소득원을 걷어 별도 자산 트랙으로 흘려보내는 재무 설계.</p></div></article>
-    <article class="item"><span class="num">24</span><div><h3>신체 단련 — 결핍의 극복과 회복의 효율화</h3><p class="desc">몸의 기능과 버티는 능력 자체를 단련한다.</p><p class="example"><span class="tag">예</span>원래 약했던 신체 부위를 정면으로 훈련하는 방식.</p></div></article>
+    <article class="item"><span class="num">19</span><div><h3>낮은 시간단가 = 자유</h3><p class="desc">낮은 시간단가가 오히려 넓은 선택지의 원천이다.</p><p class="example"><span class="tag">예</span>시간당 고수익 전문직이었다면 여러 사업을 동시에 못 벌였을 거라는 자각.</p></div></article>
+    <article class="item"><span class="num">20</span><div><h3>시스템 단가 구축</h3><p class="desc">내 시간이 아닌 시스템·회사가 돈을 버는 구조를 만든다.</p><p class="example"><span class="tag">예</span>코칭이 끝나도 성과가 나면 수익이 발생하는, 개인 시간과 분리된 수익 구조 설계.</p></div></article>
+    <article class="item"><span class="num">21</span><div><h3>낮은 에너지 → 효율 지향</h3><p class="desc">에너지 총량이 적어서 효율적인 걸 좋아한다.</p><p class="example"><span class="tag">예</span>짧은 낮잠, 오래 숨참기 같은 회복 습관.</p></div></article>
+    <article class="item"><span class="num">22</span><div><h3>경험의 무위계, 단련 선호</h3><p class="desc">고통과 행복은 경험의 차이일 뿐 우열이 없다.</p><p class="example"><span class="tag">예</span>원래 약했던 신체 기능을 회피하지 않고 훈련 대상으로 삼은 것.</p></div></article>
+    <article class="item"><span class="num">23</span><div><h3>소비 기준 = 새로움·편안함</h3><p class="desc">소비 자체에 큰 감흥이 없다. 흥분과 만족은 주로 경험, 성취·발전, 그리고 곁에 있는 사람들의 행복에서 온다 — 소비는 그중 어디에도 정확히 속하지 않는, 상대적으로 낮은 우선순위의 영역이다.</p><p class="desc">가격이 아니라 새로움이나 편안함에 돈을 쓴다.</p><p class="example"><span class="tag">예</span>비싼 것 자체에 의미를 두지 않고, 타인의 시선을 신경 쓰지 않는 소비.</p></div></article>
+    <article class="item"><span class="num">24</span><div><h3>소득과 자산의 분리</h3><p class="desc">노동소득은 자산증식의 재료, 각 사업체는 별개로 키운다.</p><p class="example"><span class="tag">예</span>여러 소득원을 걷어 별도 자산 트랙으로 흘려보내는 재무 설계.</p></div></article>
+    <article class="item"><span class="num">25</span><div><h3>신체 단련 — 결핍의 극복과 회복의 효율화</h3><p class="desc">몸의 기능과 버티는 능력 자체를 단련한다.</p><p class="example"><span class="tag">예</span>원래 약했던 신체 부위를 정면으로 훈련하는 방식.</p></div></article>
   </div>
 </section>
 
@@ -297,12 +329,12 @@
     <p class="part-thesis">혼자 갖는 것보다 같이 키우는 것</p>
   </div>
   <div class="items">
-    <article class="item"><span class="num">25</span><div><h3>취업이 아닌 사업 — 성과의 귀속</h3><p class="desc">내가 직접 성과를 내서 만들어가는 걸 좋아한다.</p><p class="example"><span class="tag">예</span>지분과 성과가 귀속되는 실행자 포지션들을 선택한 것 — 단순 피고용이 아닌.</p></div></article>
-    <article class="item"><span class="num">26</span><div><h3>숲을 먼저 본다 — 그래서 사소함을 놓친다</h3><p class="desc">숲을 단순화해서 먼저 흡수하고, 그 결과 사소한 걸 잘 놓친다.</p><p class="example"><span class="tag">예</span>새 사업 기회를 볼 때 소유구조·자금조달 같은 큰 틀부터 파악하는 방식.</p></div></article>
-    <article class="item"><span class="num">27</span><div><h3>대표 아닌 부대표</h3><p class="desc">비전과 확장을 맡고, 꼼꼼한 사람이 따로 필요하다.</p><p class="example"><span class="tag">예</span>여러 사업에서 전부 파트너·공동운영 구조를 택한 것 — 단독 대표가 아닌.</p></div></article>
-    <article class="item"><span class="num">28</span><div><h3>파이를 키운다</h3><p class="desc">혼자 더 버는 것보다 같이 더 크게 키우는 게 재밌다.</p><p class="example"><span class="tag">예</span>지분을 독점하기보다 여러 나라 파트너와 나눠 함께 키우는 방식.</p></div></article>
-    <article class="item"><span class="num">29</span><div><h3>협상의 완전 투명성</h3><p class="desc">욕망과 기여를 동시에 투명하게 제시한다.</p><p class="example"><span class="tag">예</span>계약 조건을 숨기지 않고 반복 조율하며 합의에 도달하는 과정.</p></div></article>
-    <article class="item"><span class="num">30</span><div><h3>커뮤니티 · 영향력의 레버리지</h3><p class="desc">내가 만든 구조에 더 많은 사람이 영향받는 게 즐겁다.</p><p class="example"><span class="tag">예</span>만든 커뮤니티 구조 자체가 계속 사람을 끌어들이게 설계하는 것.</p></div></article>
+    <article class="item"><span class="num">26</span><div><h3>취업이 아닌 사업 — 성과의 귀속</h3><p class="desc">내가 직접 성과를 내서 만들어가는 걸 좋아한다.</p><p class="example"><span class="tag">예</span>지분과 성과가 귀속되는 실행자 포지션들을 선택한 것 — 단순 피고용이 아닌.</p></div></article>
+    <article class="item"><span class="num">27</span><div><h3>숲을 먼저 본다 — 그래서 사소함을 놓친다</h3><p class="desc">숲을 단순화해서 먼저 흡수하고, 그 결과 사소한 걸 잘 놓친다.</p><p class="example"><span class="tag">예</span>새 사업 기회를 볼 때 소유구조·자금조달 같은 큰 틀부터 파악하는 방식.</p></div></article>
+    <article class="item"><span class="num">28</span><div><h3>대표 아닌 부대표</h3><p class="desc">비전과 확장을 맡고, 꼼꼼한 사람이 따로 필요하다.</p><p class="example"><span class="tag">예</span>여러 사업에서 전부 파트너·공동운영 구조를 택한 것 — 단독 대표가 아닌.</p></div></article>
+    <article class="item"><span class="num">29</span><div><h3>파이를 키운다</h3><p class="desc">혼자 더 버는 것보다 같이 더 크게 키우는 게 재밌다.</p><p class="example"><span class="tag">예</span>지분을 독점하기보다 여러 나라 파트너와 나눠 함께 키우는 방식.</p></div></article>
+    <article class="item"><span class="num">30</span><div><h3>협상의 완전 투명성</h3><p class="desc">욕망과 기여를 동시에 투명하게 제시한다.</p><p class="example"><span class="tag">예</span>계약 조건을 숨기지 않고 반복 조율하며 합의에 도달하는 과정.</p></div></article>
+    <article class="item"><span class="num">31</span><div><h3>커뮤니티 · 영향력의 레버리지</h3><p class="desc">내가 만든 구조에 더 많은 사람이 영향받는 게 즐겁다.</p><p class="example"><span class="tag">예</span>만든 커뮤니티 구조 자체가 계속 사람을 끌어들이게 설계하는 것.</p></div></article>
   </div>
 </section>
 
@@ -313,12 +345,12 @@
     <p class="part-thesis">불확실함을 다루는 감각</p>
   </div>
   <div class="items">
-    <article class="item"><span class="num">31</span><div><h3>풍요 동기 — "뭘 해도 된다"</h3><p class="desc">"이거 아니면 죽는다"가 아니라 "뭘 해도 된다"는 여유로 움직인다.</p><p class="example"><span class="tag">예</span>여러 사업을 동시에 벌여도 하나에 목매지 않는 태도.</p></div></article>
-    <article class="item"><span class="num">32</span><div><h3>인생 = RPG 게임</h3><p class="desc">인생을 RPG 게임이라고 생각한다.</p><p class="example"><span class="tag">예</span>실패나 결렬을 "게임 오버"가 아니라 "이번 런의 한 장면"으로 받아들이는 것.</p></div></article>
-    <article class="item"><span class="num">33</span><div><h3>가능케 하는 사회 안전망의 인지</h3><p class="desc">최소한만 벌어도 살 수 있는 사회이기에 이 방식이 가능하다는 걸 자각한다.</p><p class="example"><span class="tag">예</span>낮은 안정성으로 여러 사업을 병렬 운영하는 게 가능한 사회적 조건.</p></div></article>
-    <article class="item"><span class="num">34</span><div><h3>낙관적 허무주의 (미확정)</h3><p class="desc">낙관적 허무주의가 마음에 들지만 이유는 아직 모른다.</p><p class="example"><span class="tag">예</span>자기파괴로 향하던 문제의식이 해방적 결론으로 흘러간 지점.</p></div></article>
-    <article class="item"><span class="num">35</span><div><h3>불안정해 보여도 자기효능감</h3><p class="desc">남이 보기엔 불안정해도 계속 성장하고 뭐든 할 수 있다는 자신감이 있다.</p><p class="example"><span class="tag">예</span>진로·수입이 여러 갈래로 흩어져 있어도 각자 성장하고 있다는 실감.</p></div></article>
-    <article class="item"><span class="num">36</span><div><h3>과학의 한계 앞의 겸손</h3><p class="desc">과학의 한계가 뚜렷해서 비과학적 영역도 열어둔다.</p><p class="example"><span class="tag">예</span>비과학적 영역을 단정적으로 부정하지 않고 가능성으로 남겨두는 태도.</p></div></article>
+    <article class="item"><span class="num">32</span><div><h3>풍요 동기 — "뭘 해도 된다"</h3><p class="desc">"이거 아니면 죽는다"가 아니라 "뭘 해도 된다"는 여유로 움직인다.</p><p class="example"><span class="tag">예</span>여러 사업을 동시에 벌여도 하나에 목매지 않는 태도.</p></div></article>
+    <article class="item"><span class="num">33</span><div><h3>인생 = RPG 게임</h3><p class="desc">인생을 RPG 게임이라고 생각한다.</p><p class="example"><span class="tag">예</span>실패나 결렬을 "게임 오버"가 아니라 "이번 런의 한 장면"으로 받아들이는 것.</p></div></article>
+    <article class="item"><span class="num">34</span><div><h3>가능케 하는 사회 안전망의 인지</h3><p class="desc">최소한만 벌어도 살 수 있는 사회이기에 이 방식이 가능하다는 걸 자각한다.</p><p class="example"><span class="tag">예</span>낮은 안정성으로 여러 사업을 병렬 운영하는 게 가능한 사회적 조건.</p></div></article>
+    <article class="item"><span class="num">35</span><div><h3>낙관적 허무주의 (미확정)</h3><p class="desc">낙관적 허무주의가 마음에 들지만 이유는 아직 모른다.</p><p class="desc">"조금만 알고 좋아하다가, 다 알면 싫어진다"는 자연스러운 현상이 있다. 왜 여기 끌리는지 알아가다 보면 "사실 이게 진짜 좋아하는 게 아니었구나" 싶어질 수도 있다. 근데 그것도 좋아하는 모습의 일부일 수 있고, 아닐 수도 있다. 알아가는 과정에서 성급하게 단정 짓지 않으려 한다.</p><p class="example"><span class="tag">예</span>자기파괴로 향하던 문제의식이 해방적 결론으로 흘러간 지점.</p></div></article>
+    <article class="item"><span class="num">36</span><div><h3>불안정해 보여도 자기효능감</h3><p class="desc">남이 보기엔 불안정해도 계속 성장하고 뭐든 할 수 있다는 자신감이 있다.</p><p class="example"><span class="tag">예</span>진로·수입이 여러 갈래로 흩어져 있어도 각자 성장하고 있다는 실감.</p></div></article>
+    <article class="item"><span class="num">37</span><div><h3>과학의 한계 앞의 겸손</h3><p class="desc">과학의 한계가 뚜렷해서 비과학적 영역도 열어둔다.</p><p class="example"><span class="tag">예</span>비과학적 영역을 단정적으로 부정하지 않고 가능성으로 남겨두는 태도.</p></div></article>
   </div>
 </section>
 
@@ -329,14 +361,14 @@
     <p class="part-thesis">유일하게 통제할 수 없는, 그래서 선택한 영역</p>
   </div>
   <div class="items">
-    <article class="item"><span class="num">37</span><div><h3>사랑 = 유일하게 혼자 못 채우는 경험</h3><p class="desc">나머지는 다 혼자 할 수 있지만 사랑과 헌신만은 타인과 함께해야 한다.</p><p class="example"><span class="tag">예</span>연인과의 관계 자체 — 나머지는 혼자 다 해봤지만 이것만은 예외로 남겨둔 것.</p></div></article>
-    <article class="item"><span class="num">38</span><div><h3>성공 전/후의 비대칭, 비가역성</h3><p class="desc">성공하기 전부터 함께한 사람과 있는 게 인생 단 한 번뿐인 기회다.</p><p class="example"><span class="tag">예</span>연인을 만난 시점이 아직 크게 자리 잡기 전이었다는 것.</p></div></article>
-    <article class="item"><span class="num">39</span><div><h3>헌신 중심, 동반 성장</h3><p class="desc">상대가 더 큰 자기 자신으로 자라게 만드는 게 진짜 사랑이다.</p><p class="example"><span class="tag">예</span>상대의 새로운 도전을 지원하되 자율성과 소유권을 완전히 분리해주는 재무 설계.</p></div></article>
-    <article class="item"><span class="num">40</span><div><h3>마찰은 관계의 필연</h3><p class="desc">마찰은 관계의 필연이지 "안 맞다"는 신호가 아니다.</p><p class="example"><span class="tag">예</span>가까운 가족과의 관계, 아직 안 알린 상황 등 실제 마찰을 "같이 통과할 것"으로 보는 태도.</p></div></article>
-    <article class="item"><span class="num">41</span><div><h3>활동을 넘어선 존재 자체</h3><p class="desc">뭘 하든 편안하고 행복하면 그게 더 본질적이다.</p><p class="example"><span class="tag">예</span>특별할 것 없는 일상의 시간을 굳이 회고하고 기록하는 것.</p></div></article>
-    <article class="item"><span class="num">42</span><div><h3>결혼과 자식 — 열린 질문</h3><p class="desc">결혼과 자식은 아직 막연하고 실감이 안 난다.</p><p class="example"><span class="tag">예</span>상대는 이미 구체적인 상을 갖고 있는데, 스스로는 아직 그 감각이 형성 안 됐다고 인정한 것.</p></div></article>
-    <article class="item"><span class="num">43</span><div><h3>우정의 기준 — 완전한 수용</h3><p class="desc">내 모든 걸 다 받아들일 수 있는 사람이 친한 친구다.</p><p class="example"><span class="tag">예</span>조건 없이 다 받아주는 사람만 "친한 친구"로 분류하는 기준.</p></div></article>
-    <article class="item"><span class="num">44</span><div><h3>부모 = 아들딸처럼 귀여움</h3><p class="desc">부모가 중년이 되니 엄청 귀여워 보인다.</p><p class="example"><span class="tag">예</span>부모를 떠받드는 대상이 아니라 애틋하게 보는 시선.</p></div></article>
+    <article class="item"><span class="num">38</span><div><h3>사랑 = 유일하게 혼자 못 채우는 경험</h3><p class="desc">나머지는 다 혼자 할 수 있지만 사랑과 헌신만은 타인과 함께해야 한다.</p><p class="example"><span class="tag">예</span>연인과의 관계 자체 — 나머지는 혼자 다 해봤지만 이것만은 예외로 남겨둔 것.</p></div></article>
+    <article class="item"><span class="num">39</span><div><h3>성공 전/후의 비대칭, 비가역성</h3><p class="desc">성공하기 전부터 함께한 사람과 있는 게 인생 단 한 번뿐인 기회다.</p><p class="example"><span class="tag">예</span>연인을 만난 시점이 아직 크게 자리 잡기 전이었다는 것.</p></div></article>
+    <article class="item"><span class="num">40</span><div><h3>헌신 중심, 동반 성장</h3><p class="desc">상대가 더 큰 자기 자신으로 자라게 만드는 게 진짜 사랑이다.</p><p class="desc">이 헌신은 연인에게만 국한되지 않는다. 흥분과 만족을 주는 세 원천(18번의 성취·발전, 그리고 여기)이 있는데, 그중 하나가 곁에 있는 사람들의 행복이다 — 친구, 가족, 사업 파트너 모두 포함된다. 그래서 혼자 하지 않는 선택(29번 파이 키우기, 38번 사랑)에는 전략적 효율뿐 아니라, 곁에 있는 사람이 잘되는 것 자체가 주는 본질적 만족이라는 이유도 함께 있다.</p><p class="example"><span class="tag">예</span>상대의 새로운 도전을 지원하되 자율성과 소유권을 완전히 분리해주는 재무 설계.</p></div></article>
+    <article class="item"><span class="num">41</span><div><h3>마찰은 관계의 필연</h3><p class="desc">마찰은 관계의 필연이지 "안 맞다"는 신호가 아니다.</p><p class="example"><span class="tag">예</span>가까운 가족과의 관계, 아직 안 알린 상황 등 실제 마찰을 "같이 통과할 것"으로 보는 태도.</p></div></article>
+    <article class="item"><span class="num">42</span><div><h3>활동을 넘어선 존재 자체</h3><p class="desc">뭘 하든 편안하고 행복하면 그게 더 본질적이다.</p><p class="example"><span class="tag">예</span>특별할 것 없는 일상의 시간을 굳이 회고하고 기록하는 것.</p></div></article>
+    <article class="item"><span class="num">43</span><div><h3>결혼과 자식 — 열린 질문</h3><p class="desc">결혼과 자식은 아직 막연하고 실감이 안 난다.</p><p class="example"><span class="tag">예</span>상대는 이미 구체적인 상을 갖고 있는데, 스스로는 아직 그 감각이 형성 안 됐다고 인정한 것.</p></div></article>
+    <article class="item"><span class="num">44</span><div><h3>우정의 기준 — 완전한 수용</h3><p class="desc">내 모든 걸 다 받아들일 수 있는 사람이 친한 친구다.</p><p class="example"><span class="tag">예</span>조건 없이 다 받아주는 사람만 "친한 친구"로 분류하는 기준.</p></div></article>
+    <article class="item"><span class="num">45</span><div><h3>부모 = 아들딸처럼 귀여움</h3><p class="desc">부모가 중년이 되니 엄청 귀여워 보인다.</p><p class="example"><span class="tag">예</span>부모를 떠받드는 대상이 아니라 애틋하게 보는 시선.</p></div></article>
   </div>
 </section>
 
@@ -347,11 +379,11 @@
     <p class="part-thesis">사라진다는 사실을 재료로 쓰는 법</p>
   </div>
   <div class="items">
-    <article class="item"><span class="num">45</span><div><h3>대조를 통한 감사</h3><p class="desc">없었을 수도 있는 상태를 상상하면 지금이 더 행복해진다.</p><p class="example"><span class="tag">예</span>에어컨 바람 맞으며 노래 들을 때, "몸살이었다면 이 상태조차 감사했을 것"이라는 상상.</p></div></article>
-    <article class="item"><span class="num">46</span><div><h3>최악을 미리 가정</h3><p class="desc">최악을 미리 가정해두면 실제 슬픔이 줄어든다.</p><p class="example"><span class="tag">예</span>다투는 순간에도 이별이라는 최악을 미리 가정해두는 것.</p></div></article>
-    <article class="item"><span class="num">47</span><div><h3>죽음의 인지</h3><p class="desc">죽음을 인지하면 역설적으로 현재가 소중해진다.</p><p class="example"><span class="tag">예</span>모든 게 언젠가 사라진다는 걸 항상 인지하려는 습관.</p></div></article>
-    <article class="item"><span class="num">48</span><div><h3>4차원 시공간적 자아관</h3><p class="desc">과거·현재·미래를 동시에 인식한다.</p><p class="example"><span class="tag">예</span>지금 이 모습이 이미 미래의 추억이 될 거라는 감각으로 앞으로의 순간들을 미리 상상해보는 것.</p></div></article>
-    <article class="item"><span class="num">49</span><div><h3>아카이빙 — 미래의 그리움을 위한 기록</h3><p class="desc">그리움을 더 잘 느끼려고 순간들을 기록해둔다.</p><p class="example"><span class="tag">예</span>수백 개의 영상을 찍어 저장해놓은 것 — 나중에 신나게 울 수 있을 걸 미리 아는 것.</p></div></article>
+    <article class="item"><span class="num">46</span><div><h3>대조를 통한 감사</h3><p class="desc">없었을 수도 있는 상태를 상상하면 지금이 더 행복해진다.</p><p class="example"><span class="tag">예</span>에어컨 바람 맞으며 노래 들을 때, "몸살이었다면 이 상태조차 감사했을 것"이라는 상상.</p></div></article>
+    <article class="item"><span class="num">47</span><div><h3>최악을 미리 가정</h3><p class="desc">최악을 미리 가정해두면 실제 슬픔이 줄어든다.</p><p class="example"><span class="tag">예</span>다투는 순간에도 이별이라는 최악을 미리 가정해두는 것.</p></div></article>
+    <article class="item"><span class="num">48</span><div><h3>죽음의 인지</h3><p class="desc">죽음을 인지하면 역설적으로 현재가 소중해진다.</p><p class="example"><span class="tag">예</span>모든 게 언젠가 사라진다는 걸 항상 인지하려는 습관.</p></div></article>
+    <article class="item"><span class="num">49</span><div><h3>4차원 시공간적 자아관</h3><p class="desc">과거·현재·미래를 동시에 인식한다.</p><p class="desc">이 감각을 강화하는 방법으로, 인생 자체를 하나의 드라마나 영화처럼 보고 스스로를 관객 시점에서 지켜보기도 한다. 자기 경험에서 한 발 떨어져 보는 이 방식은, 그 안에 매몰되지 않고 더 침착하게 현재를 평가하게 해준다.</p><p class="example"><span class="tag">예</span>지금 이 모습이 이미 미래의 추억이 될 거라는 감각으로 앞으로의 순간들을 미리 상상해보는 것.</p><p class="example"><span class="tag">예</span>남은 인생을 퍼센트로 계산해보는 것도, 스스로를 관객처럼 보는 것도 같은 방식의 두 형태다.</p></div></article>
+    <article class="item"><span class="num">50</span><div><h3>아카이빙 — 미래의 그리움을 위한 기록</h3><p class="desc">그리움을 더 잘 느끼려고 순간들을 기록해둔다.</p><p class="example"><span class="tag">예</span>수백 개의 영상을 찍어 저장해놓은 것 — 나중에 신나게 울 수 있을 걸 미리 아는 것.</p></div></article>
   </div>
 </section>
 
@@ -362,9 +394,9 @@
     <p class="part-thesis">이 모든 논리가 뭘로 느껴지는가</p>
   </div>
   <div class="items">
-    <article class="item"><span class="num">50</span><div><h3>경외심 — 거대한 것 앞에서</h3><p class="desc">거대한 건축물을 볼 때 느끼는 경외심을 좋아한다.</p><p class="example"><span class="tag">예</span>공간을 공부한 배경 자체가 압도적 스케일에 대한 감수성과 맞닿아 있는 것.</p></div></article>
-    <article class="item"><span class="num">51</span><div><h3>미학 — 아련함의 정서, 흑백 동양화풍</h3><p class="desc">아련하고 슬프고 몽롱한 정서, 흑백 면과 선이 중첩되는 그림을 좋아한다.</p><p class="example"><span class="tag">예</span>직접 그리는 화풍이 흑백 면과 선이 겹쳐 하나의 그림을 이루는 방식인 것. 이 페이지의 잉크 마크도 그 방식을 그대로 옮긴 것이다.</p></div></article>
-    <article class="item"><span class="num">52</span><div><h3>충분함은 열려있음</h3><p class="desc">돈이 많을수록 해볼 수 있는 게 많을 뿐, 상한선은 없다.</p><p class="example"><span class="tag">예</span>돈을 수단으로 보되 그 수단의 크기에는 제한을 안 두는 것.</p></div></article>
+    <article class="item"><span class="num">51</span><div><h3>경외심 — 거대한 것 앞에서</h3><p class="desc">거대한 건축물을 볼 때 느끼는 경외심을 좋아한다.</p><p class="example"><span class="tag">예</span>공간을 공부한 배경 자체가 압도적 스케일에 대한 감수성과 맞닿아 있는 것.</p></div></article>
+    <article class="item"><span class="num">52</span><div><h3>미학 — 아련함의 정서, 흑백 동양화풍</h3><p class="desc">아련하고 슬프고 몽롱한 정서, 흑백 면과 선이 중첩되는 그림을 좋아한다.</p><p class="example"><span class="tag">예</span>직접 그리는 화풍이 흑백 면과 선이 겹쳐 하나의 그림을 이루는 방식인 것. 이 페이지의 잉크 마크도 그 방식을 그대로 옮긴 것이다.</p></div></article>
+    <article class="item"><span class="num">53</span><div><h3>충분함은 열려있음</h3><p class="desc">돈이 많을수록 해볼 수 있는 게 많을 뿐, 상한선은 없다.</p><p class="example"><span class="tag">예</span>돈을 수단으로 보되 그 수단의 크기에는 제한을 안 두는 것.</p></div></article>
   </div>
 </section>
 
@@ -379,7 +411,7 @@
     </div>
     <p class="meta-note">이건 믿음의 고백이 아니라, "종교라는 현상이 왜 이런 형태로 존재하게 됐는가"를 이해하려는 개인적 해석이다.</p>
     <div class="items">
-      <article class="item"><span class="num">53</span><div><h3>계층적 존재론과 연결된 영혼</h3><p class="desc">신체·영혼·기는 하드웨어·소프트웨어·전기 같은 관계이고, 영혼은 윗 차원에서 모두 연결돼 있다고 본다. 성인들은 명상으로 이 연결을 느끼려 했고, 그걸 대중에게 "서로 사랑하라"는 율법으로 번역해 전달했다고 해석한다.</p><p class="example"><span class="tag">예</span>한 문화권의 "얼" 같은 개념이 이 연결성에서 파생됐다고 보는 해석. 그중 "네가 직접 가서 느껴봐라"는 태도를 가진 전통을 특히 선호한다.</p></div></article>
+      <article class="item"><span class="num">54</span><div><h3>계층적 존재론과 연결된 영혼</h3><p class="desc">신체·영혼·기는 하드웨어·소프트웨어·전기 같은 관계이고, 영혼은 윗 차원에서 모두 연결돼 있다고 본다. 성인들은 명상으로 이 연결을 느끼려 했고, 그걸 대중에게 "서로 사랑하라"는 율법으로 번역해 전달했다고 해석한다.</p><p class="example"><span class="tag">예</span>한 문화권의 "얼" 같은 개념이 이 연결성에서 파생됐다고 보는 해석. 그중 "네가 직접 가서 느껴봐라"는 태도를 가진 전통을 특히 선호한다.</p></div></article>
     </div>
   </div>
 </section>
@@ -387,7 +419,7 @@
 <footer>
   <div class="wrap">
     <p>이 원칙들은 잠정적이다. 계속 갱신된다.</p>
-    <span class="stamp">53 Principles · 10 Parts</span>
+    <span class="stamp">54 Principles · 10 Parts</span>
   </div>
 </footer>
 
