@@ -44,15 +44,20 @@
   }
 
   .wrap{ position:relative; z-index:1; max-width:var(--max); width:100%; text-align:center; }
+  .portrait{
+    width:132px; height:132px; border-radius:50%; overflow:hidden;
+    margin:0 auto 28px; border:1px solid var(--line-strong,rgba(28,26,23,.28));
+    box-shadow:0 1px 0 rgba(28,26,23,0.06);
+  }
+  .portrait img{ width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(0.15); }
   .eyebrow{
     font-weight:600; font-size:12.5px; letter-spacing:0.16em; color:var(--mist);
     text-transform:uppercase; margin-bottom:20px; display:block;
   }
   h1{
-    font-weight:800; font-size:clamp(32px, 7vw, 48px);
-    letter-spacing:-0.02em; margin-bottom:14px;
+    font-weight:800; font-size:clamp(28px, 6vw, 40px);
+    letter-spacing:-0.02em; margin-bottom:48px;
   }
-  .sub{ font-size:16px; color:var(--mist); max-width:44ch; margin:0 auto 48px; line-height:1.7; }
 
   nav.menu{ display:flex; flex-direction:column; gap:14px; }
   .menu-item{
@@ -67,29 +72,25 @@
   .menu-arrow{ font-weight:700; color:var(--mist); font-size:15px; }
   .menu-item.locked .menu-arrow{ color:var(--seal); }
   .menu-item.locked .menu-desc{ color:var(--seal); }
-
-  footer{ margin-top:56px; font-size:12px; color:var(--mist-light); font-weight:600; letter-spacing:0.08em; }
 </style>
 </head>
 <body>
   <div class="ink-mark" aria-hidden="true"><span></span><span></span></div>
   <div class="wrap">
+    <div class="portrait"><img src="assets/profile.jpg" alt="안순찬"></div>
     <span class="eyebrow">안순찬</span>
-    <h1>여러 사업을 동시에 만들며,<br>오퍼레이터에서 자본배분자로.</h1>
-    <p class="sub">건축을 전공하며 구조를 먼저 보는 사고를 익혔고, 지금은 그 방식을 여러 산업에 적용하고 있다.</p>
+    <h1>안녕하세요! 안순찬입니다.</h1>
 
     <nav class="menu">
       <a href="cv.html" class="menu-item">
         <div>
           <div class="menu-title">CV</div>
-          <div class="menu-desc">학력 · 경력 · 수상 · 자격증</div>
         </div>
         <span class="menu-arrow">→</span>
       </a>
       <a href="values.html" class="menu-item">
         <div>
           <div class="menu-title">가치관</div>
-          <div class="menu-desc">54개의 원칙 — 사유, 관계, 돈, 죽음을 다루는 방식</div>
         </div>
         <span class="menu-arrow">→</span>
       </a>
@@ -101,8 +102,6 @@
         <span class="menu-arrow">→</span>
       </a>
     </nav>
-
-    <footer>계속 만들어가는 중이다.</footer>
   </div>
 </body>
 </html>
