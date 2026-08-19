@@ -102,11 +102,13 @@
   .rm-table tr:last-child td{ border-bottom:none; }
   .rm-table td:first-child{ font-weight:700; color:var(--ink); white-space:nowrap; width:140px; }
   .rm-table td.empty{ color:var(--seal); }
+  .rm-table th + th, .rm-table td + td{ border-left:1px solid var(--line); }
+  .rm-table td.dest{ color:var(--seal); font-weight:600; }
   @media (max-width:560px){
     .rm-table thead{ display:none; }
     .rm-table, .rm-table tbody, .rm-table tr, .rm-table td{ display:block; width:auto; }
     .rm-table tr{ padding:14px 0; border-bottom:1px solid var(--line); }
-    .rm-table td{ border:none; padding:2px 0; white-space:normal; }
+    .rm-table td{ border:none !important; padding:2px 0; white-space:normal; }
     .rm-table td:first-child{ color:var(--seal); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
   }
 
@@ -247,15 +249,15 @@
     <section class="rm">
       <h2 class="sec-title">현재 벤처 → 최종 비전 연결</h2>
       <table class="rm-table">
-        <thead><tr><th>벤처</th><th>최종 비전 연결</th></tr></thead>
+        <thead><tr><th>벤처</th><th>현재 역량 / 경험</th><th>최종 비전 연결</th></tr></thead>
         <tbody>
-          <tr><td>포토부스</td><td>굿즈, 브랜딩 역량, 해외 진출 경험 → 글로벌 + 브랜딩</td></tr>
-          <tr><td>뷰티 브랜드</td><td>수출 실무, 뷰티 산업 이해 → 글로벌(달러벌이) + 뷰티웰니스</td></tr>
-          <tr><td>부동산 경매</td><td>부동산 네트워크, 직접 투자 경험 → 부동산(재개발, 상업용 확장의 토대)</td></tr>
-          <tr><td>B2B SaaS</td><td>B2B 영업력, 엑싯 트랙레코드 → 20대 엑싯 목표 직결</td></tr>
-          <tr><td>파운더스살롱</td><td>사업가, 투자자 네트워크 총집합 → 네트워크(허브)</td></tr>
-          <tr><td>인베스터클럽</td><td>금융 네트워크 → 네트워크 + 쩐주 확보</td></tr>
-          <tr><td>팟캐스트, 매거진</td><td>노출 채널, 콘텐츠 복리자산 → 브랜딩 + 네트워크</td></tr>
+          <tr><td>포토부스</td><td>굿즈, 브랜딩 역량, 해외 진출 경험</td><td class="dest">글로벌 + 브랜딩</td></tr>
+          <tr><td>뷰티 브랜드</td><td>수출 실무, 뷰티 산업 이해</td><td class="dest">글로벌(달러벌이) + 뷰티웰니스</td></tr>
+          <tr><td>부동산 경매</td><td>부동산 네트워크, 직접 투자 경험</td><td class="dest">부동산(재개발, 상업용 확장의 토대)</td></tr>
+          <tr><td>B2B SaaS</td><td>B2B 영업력, 엑싯 트랙레코드</td><td class="dest">20대 엑싯 목표 직결</td></tr>
+          <tr><td>파운더스살롱</td><td>사업가, 투자자 네트워크 총집합</td><td class="dest">네트워크(허브)</td></tr>
+          <tr><td>인베스터클럽</td><td>금융 네트워크</td><td class="dest">네트워크 + 쩐주 확보</td></tr>
+          <tr><td>팟캐스트, 매거진</td><td>노출 채널, 콘텐츠 복리자산</td><td class="dest">브랜딩 + 네트워크</td></tr>
         </tbody>
       </table>
     </section>
