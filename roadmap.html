@@ -108,7 +108,7 @@
     <span class="eyebrow">Private</span>
     <h1>인생 로드맵</h1>
     <p>비밀번호를 입력하세요</p>
-    <input type="password" id="gate-input" autocomplete="off" />
+    <input type="text" id="gate-input" autocomplete="off" />
     <div id="gate-error"></div>
     <button id="gate-submit">입장</button>
   </div>
@@ -248,7 +248,7 @@
   var err = document.getElementById('gate-error');
 
   function tryUnlock(){
-    if(input.value === PW){
+    if(input.value.normalize('NFC').trim() === PW){
       document.getElementById('gate').style.display = 'none';
       document.getElementById('content').style.display = 'block';
     } else {
@@ -258,7 +258,7 @@
     }
   }
   document.getElementById('gate-submit').addEventListener('click', tryUnlock);
-  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') tryUnlock(); });
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter' && !e.isComposing) tryUnlock(); });
   input.focus();
 </script>
 
